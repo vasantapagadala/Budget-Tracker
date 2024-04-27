@@ -76,8 +76,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Budget Tracker</h1>
-       
+       <h1>Budget Tracker</h1>
+       <h2>Subheading</h2>
         <form id="budget-form">
             <label for="description">Description:</label>
             <input type="text" id="description" placeholder="Description" required fdprocessedid="fg9ula">
@@ -85,10 +85,11 @@
            <input type="number" id="amount" placeholder="Amount" required fdprocessedid="5q9hu">
            <label>
                Select Type:
-               <select id="type">
-                   <option value="income">Income</option>
-                   <option value="expenses">Expenses</option>
-               </select>
+              <label for="type">Select Type:</label>
+              <select id="type">
+                  <option value="income">Income</option>
+                  <option value="expenses">Expenses</option>
+              </select>
            </label>
             <style>
                 .submit-button {
@@ -98,7 +99,15 @@
                 }
             </style>
             
-            <input type="submit" value="Add" class="submit-button" fdprocessedid="yrvvwk">
+            <style>
+                .submit-button {
+                    color: rgb(0, 0, 0); /* Change text color to black or a darker color */
+                    background-color: rgb(255, 255, 255); /* Change background color to white or a lighter color */
+                    /* Add any other styling such as padding, border, etc. */
+                }
+            </style>
+            
+            <input type="submit" value="Add" class="submit-button" fdprocessedid="yrvvwk" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
         </form>
         <div id="budget">
             <h3>Budget</h3>
