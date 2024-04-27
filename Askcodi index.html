@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input[type="text"] {
+      padding: 8px;
+      margin: 5px;
+    }
+    button {
+      padding: 8px;
+    }
+    #expenses {
+      margin-top: 20px;
+    }
+  </style>
+  <title>Budget Tracker</title>
+</head>
+<body>
+  <h1>Budget Tracker</h1>
+  <label for="expense">Enter Expense:</label>
+  <input type="text" id="expense">
+  <button onclick="addExpense()">Add Expense</button>
+  <div id="expenses">
+    <h2>Expenses</h2>
+    <ul id="expense-list"></ul>
+  </div>
+  <h2>Total Budget: <span id="total">0</span></h2>
+
+  <script>
+    let totalBudget = 0;
+    const expenseList = document.getElementById('expense-list');
+    const totalSpan = document.getElementById('total');
+    
+    function addExpense() {
+      const expenseInput = document.getElementById('expense');
+      const expenseValue = parseFloat(expenseInput.value);
+      if (!isNaN(expenseValue)) {
+        totalBudget += expenseValue;
+        totalSpan.textContent = totalBudget;
+        const newExpense = document.createElement('li');
+        newExpense.textContent = expenseValue;
+        expenseList.appendChild(newExpense);
+        expenseInput.value = '';
+      } else {
+        alert('Please enter a valid number for the expense.');
+      }
+    }
+  </script>
+</body>
+</html>
