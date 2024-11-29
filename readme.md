@@ -1,1 +1,1 @@
-This is budget tracker file
+This is basic budget tracker file
